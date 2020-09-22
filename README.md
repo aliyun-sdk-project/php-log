@@ -4,6 +4,11 @@
 - Yii2
 - lavarel
 
+## 安装
+```
+composer require aliyun-sdk-project/php-log
+```
+
 ## Yii2 配置
 
 ```
