@@ -27,7 +27,7 @@ class LaravelLogHandler extends AbstractSyslogHandler
         $this->client = new Client($endpoint, $accessKeyId, $accessKey);
     }
 
-    protected function write(array $record)
+    protected function write(array $record): void
     {
         $lines = $this->splitMessageIntoLines($record['formatted']);
         $topic = 'project-log';
@@ -40,7 +40,7 @@ class LaravelLogHandler extends AbstractSyslogHandler
         $response = $this->client->putLogs($request);
     }
 
-    public function close()
+    public function close(): void
     {
         $this->client = null;
     }
